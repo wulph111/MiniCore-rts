@@ -108,7 +108,7 @@ void HardwareSerial::_rx_complete_irq(void)
     // current location of the tail), we're about to overflow the buffer
     // and so we don't write the character or advance the head.
     if (i != _rx_buffer_tail) {
-      _rx_buffer[_rx_buffer_head] = c;
+      _rx_buffer[_rx_buffer_head] = (PIND & (1<<PD2) ? (c | 0xC0) : c); // TEST, high two bits should be set on any characters received by Serial.read() when PD2 is high. Prerequisites: PD2 should be set as an input in the setup code.
       _rx_buffer_head = i;
     }
   } else {
