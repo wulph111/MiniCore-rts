@@ -1,3 +1,6 @@
+# MiniCore-RTS
+Modifying to trap RTS signal during serial recieve interrupt, and do something different depending on RTS state at the instant the character is recognized.
+
 # MiniCore
 [![Build Status](https://travis-ci.com/MCUdude/MiniCore.svg?branch=master)](https://travis-ci.com/MCUdude/MiniCore) [![MiniCore forum thread](https://img.shields.io/badge/support-forum-blue.svg)](https://forum.arduino.cc/index.php?topic=412070.0)
 
